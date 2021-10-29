@@ -249,6 +249,7 @@ void MainWindow::loadSettings()
             game.setValue("height", 9);
         if (!game.contains("mines"))
             game.setValue("mines", 10);
+        gameMode = 3;
         gameSettings[0] = game.value("width").toInt();
         gameSettings[1] = game.value("height").toInt();
         gameSettings[2] = game.value("mines").toInt();
@@ -258,10 +259,7 @@ void MainWindow::loadSettings()
         expert->setChecked(false);
         break;
     default:
-        gameMode = 0;
-        gameSettings[0] = 9;
-        gameSettings[1] = 9;
-        gameSettings[2] = 10;
+        setBegginer();
         break;
     }
     QSettings video("video-minesweeper", "video");

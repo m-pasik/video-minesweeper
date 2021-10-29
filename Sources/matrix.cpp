@@ -302,18 +302,14 @@ void Matrix::videoTick()
         return;
     }
     cv::resize(frame, frame, cv::Size(w, h));
-    count = 0;
-    int p = 0;
     for (int y = 0; y < h; y++)
         for (int x = 0; x < w; x++)
         {
             int RGB[3] = {frame.at<cv::Vec3b>(y, x)[0], frame.at<cv::Vec3b>(y, x)[1], frame.at<cv::Vec3b>(y, x)[2]};
             int lightness = (RGB[0] + RGB[1] + RGB[2]) / 3;
-            p++;
             if (lightness > 127)
             {
                 mines[y][x] = true;
-                count++;
             }
             else
                 mines[y][x] = false;
