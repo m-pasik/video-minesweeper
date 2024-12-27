@@ -1,0 +1,9 @@
+.qmake.stash
+Makefile
+Objects/
+VideoMinesweeper
+moc_mainwindow.cpp
+moc_matrix.cpp
+moc_predefs.h
+moc_tile.cpp
+qrc_resources.cpp
